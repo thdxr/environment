@@ -1,0 +1,13 @@
+# Unison preferences file
+root=/home/dax
+root=ssh://dax@ironbay.digital//home/dax
+repeat=watch
+log=false
+perms=0
+ignore = Name unison.log
+ignore = Name .zsh_history
+ignore = Name .viminfo
+ignore = Path .unison
+ignore = Path .cache
+ignore = Path .config
+ignore = Path Downloads

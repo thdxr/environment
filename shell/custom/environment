@@ -1,0 +1,23 @@
+#PS1='\[\e[1;30m\]\h:\w\[\e[m\] \[\e[1;37m\]\$\[\e[m\] \[\e[1;37m\]'
+
+export NOTEHOME=~/docs/notes
+
+
+if which cygpath &> /dev/null; then
+	#setx GOROOT $(cygpath --mixed /opt/go/) > /dev/null
+	#setx GOPATH $(cygpath --mixed ~/dev/go) > /dev/null
+	export GOROOT="$(cygpath -w /opt/go/)" > /dev/null
+	export GOPATH="$(cygpath -w ~/dev/go)" > /dev/null
+	export ATOM_HOME=$(cygpath --mixed ~/.atom) > /dev/null
+	export PATH=$PATH:/cygdrive/c/Users/Dharun/AppData/Local/Android/android-sdk/platform-tools
+	export PATH=$PATH:/cygdrive/c/Windows/System32
+	# export USERPROFILE=$(cygpath --mixed ~)
+else
+	export GOROOT=/opt/go/
+	export GOPATH=~/dev/go
+	export ATOM_HOME=~/.atom
+fi
+
+export PATH=$PATH:/opt/go/bin:~/dev/go/bin:/opt/bin:/opt/node
+export PATH=$PATH:~/.boot2docker/
+export PATH=$PATH:~/dev/script

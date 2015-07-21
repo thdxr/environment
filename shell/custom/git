@@ -1,0 +1,8 @@
+alias add="git add"
+alias status="git status"
+alias commit="git commit --allow-empty"
+alias push="git push origin"
+alias pull="git pull origin"
+alias lines="git ls-files | xargs cat | wc -l"
+alias branch="git branch"
+alias checkout="git checkout"
