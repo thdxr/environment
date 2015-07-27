@@ -1,6 +1,5 @@
 alias clear='printf "\033c"'
 alias vi=vim
-alias open=cygstart
 alias ls="ls -G"
 cd() {
     builtin cd "${@:-$HOME}" && ls
