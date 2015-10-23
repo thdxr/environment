@@ -1,11 +1,11 @@
 #!/bin/bash
 
 mkdir /var/run/sshd
-mkdir -p /home/dax/.ssh
-chmod 700 /home/dax/.ssh
-mv /authorized_keys /home/dax/.ssh/
-chmod 600 /home/dax/.ssh/*
-chown -Rf dax:dax /home/dax/.ssh
+mkdir -p /home/$1/.ssh
+chmod 700 /home/$1/.ssh
+mv /authorized_keys /home/$1/.ssh/
+chmod 600 /home/$1/.ssh/*
+chown -Rf $1:$1 /home/$1/.ssh
 /usr/bin/ssh-keygen -A
 ls -al /etc/ssh/ssh*key
 

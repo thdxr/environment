@@ -1,23 +1,11 @@
 alias clear='printf "\033c"'
 alias vi=vim
-alias ls="ls -G"
+alias ls="ls --color -G"
 cd() {
     builtin cd "${@:-$HOME}" && ls
 }
 alias decrypt="ccdecrypt -c"
 alias server="python -m SimpleHTTPServer 8080"
-
-#Git
-alias add="git add"
-alias status="git status"
-alias commit="git commit --allow-empty"
-alias push="git push origin"
-alias pull="git pull origin"
-alias lines="git ls-files | xargs cat | wc -l"
-alias branch="git branch"
-alias checkout="git checkout"
-
-alias sublime="open /opt/sublime/sublime_text ." 
 
 attach() {
 	sudo docker exec -it "$1" /bin/bash 
@@ -30,4 +18,3 @@ logs() {
 destroy() {
 	ps aux -W | grep $1 | awk '{print $2}' | xargs kill
 }
-
