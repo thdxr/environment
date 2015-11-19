@@ -46,5 +46,5 @@ RUN /bin/bash ./shell/configure.sh $user
 
 USER root
 EXPOSE 22
-VOLUME /home/$user
+VOLUME /
 CMD ["wrapdocker"]
