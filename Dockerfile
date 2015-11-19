@@ -1,6 +1,5 @@
 FROM derjudge/archlinux
 ENV user dax
-VOLUME /home/$user
 
 RUN useradd -m $user
 RUN echo "$user:changeme" | chpasswd
@@ -47,4 +46,5 @@ RUN /bin/bash ./shell/configure.sh $user
 
 USER root
 EXPOSE 22
+VOLUME /home/$user
 CMD ["wrapdocker"]
