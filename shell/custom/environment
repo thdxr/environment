@@ -7,3 +7,4 @@ export ATOM_HOME=~/.atom
 export PATH=$PATH:/opt/go/bin:~/dev/go/bin:/opt/bin:/opt/node
 export PATH=$PATH:~/.boot2docker/
 export PATH=$PATH:~/dev/script
+export PATH=$PATH:~/.npm/bin

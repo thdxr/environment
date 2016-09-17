@@ -1,6 +1,9 @@
 alias clear='printf "\033c"'
 alias vi=vim
-alias ls="ls --color -G"
+alias ls="ls --color -G --group-directories-first"
+alias yaourt="yaourt --noconfirm"
+alias ps="ps aux"
+
 cd() {
     builtin cd "${@:-$HOME}" && ls
 }
