@@ -1,0 +1,76 @@
+urxvt*foreground: white
+urxvt*background: black
+
+URxvt.scrollBar: false
+URxvt.font: xft:Consolas:antialias=true:size=11
+URxvt.iso14755 : false
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
+
+
+! --- ~/.Xresources ------------------------------------------------------------
+! ------------------------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
+
+! --- special colors ---
+
+*background: #000000
+*foreground: #d9d9d9
+
+! --- standard colors ---
+
+! black
+*color0: #000000
+
+! bright_black
+*color8: #262626
+
+! red
+*color1: #f38282
+
+! bright_red
+*color9: #f8baba
+
+! green
+*color2: #82f382
+
+! bright_green
+*color10: #baf8ba
+
+! yellow
+*color3: #f3f382
+
+! bright_yellow
+*color11: #f8f8ba
+
+! blue
+*color4: #8282f3
+
+! bright_blue
+*color12: #babaf8
+
+! magenta
+*color5: #f382f3
+
+! bright_magenta
+*color13: #f8baf8
+
+! cyan
+*color6: #82f3f3
+
+! bright_cyan
+*color14: #baf8f8
+
+! white
+*color7: #d9d9d9
+
+! bright_white
+*color15: #ffffff
+
+Xcursor.size: 8
