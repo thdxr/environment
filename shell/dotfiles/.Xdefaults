@@ -3,12 +3,11 @@ urxvt*background: black
 
 URxvt.scrollBar: false
 URxvt.font: xft:Consolas:antialias=true:size=11
-URxvt.iso14755 : false
 
-URxvt.clipboard.autocopy: true
-URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+URxvt.perl-ext-common: selection-to-clipboard,clipboard
 URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 
 ! --- ~/.Xresources ------------------------------------------------------------
