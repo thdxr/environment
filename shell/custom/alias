@@ -22,5 +22,6 @@ destroy() {
 	ps aux -W | grep $1 | awk '{print $2}' | xargs kill
 }
 
-alias vpn-inbox="sshuttle --dns -r root@sshd.inbox.virginia.inboxtheapp.com:2222 10.0.0.0/8"
-alias vpn-ironbay="sshuttle --dns -r ovh.ironbay.digital:2222 10.0.0.0/8"
+alias vpn-inbox="sshuttle --dns -r root@sshd.inbox.virginia.inboxtheapp.com:2222 10.0.0.0/8 169.0.0.0/8"
+alias vpn-ironbay="sshuttle --dns -r root@ovh.ironbay.digital:2222 10.0.0.0/8 169.0.0.0/8"
+

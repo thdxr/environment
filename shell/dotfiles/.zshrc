@@ -6,6 +6,7 @@ export ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="alanpeabody"
+# ZSH_THEME="mh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -85,4 +86,5 @@ for f in ~/dev/environment/shell/custom/*; do source $f; done
 
 autoload -U promptinit
 promptinit
+setopt NO_BEEP
 

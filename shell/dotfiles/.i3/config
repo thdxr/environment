@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+# gaps inner 0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -150,9 +151,10 @@ bar {
         status_command i3status
 	font pango:Consolas 11
 	position top
+	# tray_output primary
 }
 
-new_window pixel 1
+new_window pixel 0
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 5 +5% #increase sound volume
@@ -164,3 +166,14 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 for_window [class="google-chrome"] border none
+
+# Startup
+exec --no-startup-id nm-applet
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id slack
+exec --no-startup-id compton
+
+# Workspace
+assign [class="Slack"] 1
+
+# Media
