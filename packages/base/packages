@@ -10,10 +10,6 @@ base
 base-devel
 bat
 bind
-blueberry
-bluez
-bluez-hcitool
-bluez-utils
 bun-bin
 cloudflared
 consolas-font
@@ -22,7 +18,6 @@ dmraid
 docker
 docker-compose
 downgrade
-efibootmgr
 esbuild
 ffmpeg4.4
 fuse-overlayfs
@@ -59,7 +54,6 @@ oh-my-zsh-git
 openssh
 otf-hasklig
 otf-hasklig-nerd
-pacdef
 paru-bin
 pkgconf
 plow
@@ -73,8 +67,6 @@ python
 python2
 reflector
 ripgrep
-rpi-imager
-rpiusbboot
 rsync
 speedtest-cli
 sshfs
@@ -88,14 +80,12 @@ terraform
 tmux
 tmux-plugin-manager
 traceroute
-twitch-cli-bin
 typescript
 unison
 unrar
 unzip
 vercel
 wget
-which
 xclip
 yt-dlp
 zip
