@@ -1,8 +1,0 @@
-[arch]
-greetd
-greetd-tuigreet
-efibootmgr
-iwd
-usbutils
-virtualbox
-virtualbox-guest-utils

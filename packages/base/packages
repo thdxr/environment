@@ -1,6 +1,7 @@
 air-bin
 arp-scan
 autoconf
+direnv
 autojump-rs
 automake
 aws-cli-v2-bin
@@ -17,12 +18,10 @@ docker
 docker-compose
 downgrade
 esbuild
-ffmpeg4.4
 fuse-overlayfs
 fzf
 geekbench
 git
-gitfs
 github-cli
 gnu-netcat
 go
@@ -60,7 +59,6 @@ pscale-cli-bin
 pspg
 pv
 python
-python2
 reflector
 ripgrep
 rsync

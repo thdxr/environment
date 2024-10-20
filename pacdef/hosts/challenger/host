@@ -1,7 +1,0 @@
-
-[arch]
-zram-generator
-btrfs-progs
-cloud-guest-utils
-cloud-init
-grub
