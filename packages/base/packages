@@ -6,8 +6,6 @@ automake
 aws-cli-v2-bin
 awslogs
 aws-session-manager-plugin
-base
-base-devel
 bat
 bind
 bun-bin
@@ -36,8 +34,6 @@ jq
 less
 libaio
 libldm
-linux
-linux-firmware
 make
 mariadb
 mono
