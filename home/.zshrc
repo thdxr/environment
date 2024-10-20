@@ -1,5 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export ZSH=~/.oh-my-zsh/
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -118,3 +121,12 @@ export PATH="$HOME/.pulumi/bin:$PATH"
 
 # sst
 export PATH=/home/thdxr/.sst/bin:$PATH
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+eval "$(direnv hook zsh)"
+
+
+. "$HOME/.cargo/env"
+source ~/dev/.env

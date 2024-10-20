@@ -1,0 +1,76 @@
+#!/bin/bash
+set -e
+
+# Function to get and display folder options
+get_folder_options() {
+    folders=($(find . -maxdepth 1 -type d -not -name ".*" -printf "%f\n" | sort))
+    for i in "${!folders[@]}"; do
+        echo "$((i+1)). ${folders[i]}"
+    done
+    echo "$((${#folders[@]}+1)). skip"
+    echo "$((${#folders[@]}+2)). remove"
+}
+
+# Function to sort and uniquify packages files
+sort_packages_files() {
+    for folder in */; do
+        if [[ -f "${folder}packages" ]]; then
+            sort -u -o "${folder}packages" "${folder}packages"
+            echo "sorted and removed duplicates from ${folder}packages"
+        fi
+    done
+}
+
+# Get list of explicitly installed packages
+packages=$(pacman -Qe | awk '{print $1}')
+
+# Array to store packages to be removed
+declare -a to_remove
+
+# Main loop
+for pkg in $packages; do
+    if [[ $pkg == thdxr-* ]]; then
+        continue
+    fi
+    while true; do
+        echo "package: $pkg"
+        get_folder_options
+        
+        read -p "> " choice
+        
+        if [[ "$choice" =~ ^[0-9]+$ ]]; then
+            if ((choice >= 1 && choice <= ${#folders[@]})); then
+                folder="${folders[choice-1]}"
+                echo "$pkg" >> "$folder/packages"
+                break
+            elif ((choice == ${#folders[@]}+1)); then
+                echo "skipped $pkg"
+                break
+            elif ((choice == ${#folders[@]}+2)); then
+                to_remove+=("$pkg")
+                break
+            fi
+        fi
+        
+        echo "invalid choice"
+    done
+done
+
+# Sort and remove duplicates from all package files
+sort_packages_files
+
+# Remove marked packages
+if [ ${#to_remove[@]} -gt 0 ]; then
+    echo "the following packages will be removed:"
+    printf '%s\n' "${to_remove[@]}"
+    read -p "do you want to proceed with removal? (y/N) " confirm
+    if [[ $confirm == [Yy]* ]]; then
+        sudo pacman -R "${to_remove[@]}"
+        echo "removed packages: ${to_remove[*]}"
+    else
+        echo "removal cancelled"
+    fi
+else
+    echo "no packages marked for removal"
+fi
+

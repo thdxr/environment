@@ -1,6 +1,6 @@
 alias clear='printf "\033c"'
 alias vim=nvim
-alias ls="ls --color -G --group-directories-first"
+alias ls="ls --color -G"
 
 cd() {
     builtin cd "${@:-$HOME}" && ls

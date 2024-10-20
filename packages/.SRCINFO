@@ -1,0 +1,22 @@
+pkgbase = thdxr
+	pkgdesc = system configurations
+	pkgver = 1
+	pkgrel = 1
+	arch = any
+
+pkgname = thdxr-base
+	depends = fuse-overlayfs
+	depends = tmux-plugin-manager
+	depends = libaio
+	depends = linux-firmware
+	depends = paru
+	depends = mosh
+	depends = rsync
+	depends = base-devel
+	depends = paru-bin
+	depends = base
+	depends = linux
+	depends = openssh
+	depends = pacdef
+	depends = reflector
+	depends = sudo

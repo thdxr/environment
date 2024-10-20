@@ -198,12 +198,12 @@ workspace 2 output fake-1
 workspace 3 output fake-0
 
 # Startup
-exec --no-startup-id picom
+# exec --no-startup-id picom
 exec --no-startup-id dunst
+exec --no-startup-id barrier
 exec --no-startup-id ~/.i3/startup
 # exec --no-startup-id feh --randomize --bg-fill /home/dax/docs/wallpaper
 
 # fake-outputs 1152x2160+0+0,2688x2160+1152x0
 
 for_window [class="Kit" instance="kit"] floating enable
-

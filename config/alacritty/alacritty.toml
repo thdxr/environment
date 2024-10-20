@@ -51,6 +51,7 @@ size = 13
 
 [font.bold]
 family = "Hasklug Nerd Font"
+style = "SemiBold"
 
 [font.glyph_offset]
 x = 0

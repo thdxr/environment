@@ -50,6 +50,11 @@ end)
 
 lsp.configure("vtsls", {
   root_dir = require("lspconfig").util.root_pattern(".git", "pnpm-workspace.yaml", "pnpm-lock.yaml", "yarn.lock", "package-lock.json", "bun.lockb"),
+  typescript = {
+    tsserver = {
+      maxTsServerMemory = 12288,
+    }
+  },
   experimental = {
     completion = {
       entriesLimit = 3
@@ -65,15 +70,21 @@ vim.diagnostic.config({
 
 require("tsc").setup()
 
-require("copilot").setup({
-  suggestion = {
-    auto_trigger = true,
-    keymap = {
-      accept = "<C-l>"
-    }
-  }
-})
+-- require("copilot").setup({
+--   suggestion = {
+--     auto_trigger = true,
+--     keymap = {
+--       accept = "<C-l>"
+--     }
+--   }
+-- })
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 vim.keymap.set("i", "<C-j>", 'copilot#Accept()', { expr = true, silent = true })
+
+require("supermaven-nvim").setup({
+  keymaps = {
+    accept_suggestion = "<C-l>",
+  },
+})

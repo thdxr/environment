@@ -5,6 +5,7 @@ return require('packer').startup(function()
   use { "nvim-treesitter/playground" }
   use { "tpope/vim-fugitive" }
   use { "dmmulroy/tsc.nvim" }
+  use { "supermaven-inc/supermaven-nvim"}
 
 
   use {
@@ -40,4 +41,6 @@ return require('packer').startup(function()
   use { "nvim-treesitter/nvim-treesitter-context" }
 
   use { 'robitx/gp.nvim' }
+  use { 'tpope/vim-dadbod' }
+  use { 'kristijanhusak/vim-dadbod-ui' }
 end)

@@ -26,8 +26,8 @@ for file in $PWD/config/*; do
 	link config/$name .config/$name
 done
 
-rm -rf ~/.config/pacdef
-mkdir -p ~/.config/pacdef
-ln -s ~/dev/environment/pacdef/pacdef.yaml ~/.config/pacdef/pacdef.yaml
-pacdef group import ~/dev/environment/pacdef/hosts/$HOST
+# rm -rf ~/.config/pacdef
+# mkdir -p ~/.config/pacdef
+# ln -s ~/dev/environment/pacdef/pacdef.yaml ~/.config/pacdef/pacdef.yaml
+# pacdef group import ~/dev/environment/pacdef/hosts/$HOST
 
