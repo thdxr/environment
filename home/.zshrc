@@ -112,21 +112,13 @@ export PNPM_HOME="/home/thdxr/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-# add Pulumi to the PATH
-# export PATH=$PATH:$HOME/.pulumi/bin
-
-# Added by nitric binary installer
-export PATH="$HOME/.nitric/bin:$PATH"
-export PATH="$HOME/.pulumi/bin:$PATH"
-
-# sst
-export PATH=/home/thdxr/.sst/bin:$PATH
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 eval "$(direnv hook zsh)"
 
 
-. "$HOME/.cargo/env"
 source ~/dev/.env
+
+# dune
+source $HOME/.dune/env/env.zsh

@@ -1,5 +1,3 @@
-#PS1='\[\e[1;30m\]\h:\w\[\e[m\] \[\e[1;37m\]\$\[\e[m\] \[\e[1;37m\]'
-
 SSH_ENV="$HOME/.ssh/agent-environment"
 
 function start_agent {
