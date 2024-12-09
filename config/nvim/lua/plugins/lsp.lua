@@ -38,6 +38,16 @@ return {
 			})
 
 			require("mason").setup()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"astro",
+					"cssls",
+					"vtsls",
+					"cssmodules_ls",
+					"gopls",
+					"lua_ls",
+				},
+			})
 			require("mason-lspconfig").setup_handlers({
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({})
