@@ -65,27 +65,6 @@ return {
 					})
 				end,
 			})
-
-			require("lspconfig").vtsls.setup({
-				root_dir = require("lspconfig").util.root_pattern(
-					".git",
-					"pnpm-workspace.yaml",
-					"pnpm-lock.yaml",
-					"yarn.lock",
-					"package-lock.json",
-					"bun.lockb"
-				),
-				typescript = {
-					tsserver = {
-						maxTsServerMemory = 12288,
-					},
-				},
-				experimental = {
-					completion = {
-						entriesLimit = 3,
-					},
-				},
-			})
 		end,
 	},
 	{
