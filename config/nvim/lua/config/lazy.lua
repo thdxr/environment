@@ -15,39 +15,16 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-vim.o.number = true
-vim.o.numberwidth = 1
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.expandtab = true
-vim.o.shiftround = true
-vim.o.mouse = "a"
-vim.o.wrap = true
-vim.o.signcolumn = "yes"
-vim.opt.smartindent = true
-vim.opt.wrap = true
-vim.o.foldlevel = 99
-vim.o.foldmethod = "indent"
-vim.o.foldenable = true
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
-vim.opt.undofile = true
-vim.opt.scrolloff = 8
-vim.opt.updatetime = 50
-
-vim.keymap.set("n", "J", ":m .+1<CR>==", { noremap = true, silent = true })
-vim.keymap.set("n", "K", ":m .-2<CR>==", { noremap = true, silent = true })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+require("config.set")
+require("config.keymap")
 
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	checker = { enabled = true },
+	checker = {
+		enabled = true,
+		notify = false,
+	},
 })
