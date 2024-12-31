@@ -1,0 +1,9 @@
+#/bin/bash
+
+i3-msg "workspace 1; exec slack -f;"
+i3-msg "workspace 2; exec google-chrome;"
+i3-msg "workspace 3; exec alacritty;"
+i3-msg "workspace 3; exec alacritty;"
+i3-msg "workspace 3; exec alacritty;"
+i3-msg "workspace 4; exec alacritty;"
+

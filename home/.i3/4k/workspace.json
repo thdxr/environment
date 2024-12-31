@@ -1,0 +1,83 @@
+{
+  "border": "pixel",
+  "floating": "auto_off",
+  "layout": "splith",
+  "percent": 1,
+  "type": "con",
+  "nodes": [
+    {
+      "border": "pixel",
+      "floating": "auto_off",
+      "layout": "splitv",
+      "percent": 0.75,
+      "type": "con",
+      "name": "vim",
+      "swallows": [
+        {
+          "class": "^Alacritty$"
+        }
+      ]
+    },
+    {
+      "border": "pixel",
+      "floating": "auto_off",
+      "layout": "splitv",
+      "percent": 0.25,
+      "type": "con",
+      "nodes": [
+        {
+          "border": "pixel",
+          "current_border_width": 0,
+          "floating": "auto_off",
+          "name": "Alacritty",
+          "percent": 0.25,
+          "swallows": [
+            {
+              "class": "^Alacritty$"
+            }
+          ],
+          "type": "con"
+        },
+        {
+          "border": "pixel",
+          "current_border_width": 0,
+          "floating": "auto_off",
+          "name": "Alacritty",
+          "percent": 0.25,
+          "swallows": [
+            {
+              "class": "^Alacritty$"
+            }
+          ],
+          "type": "con"
+        },
+        {
+          "border": "pixel",
+          "current_border_width": 0,
+          "floating": "auto_off",
+          "name": "Alacritty",
+          "percent": 0.25,
+          "swallows": [
+            {
+              "class": "^Alacritty$"
+            }
+          ],
+          "type": "con"
+        },
+        {
+          "border": "pixel",
+          "current_border_width": 0,
+          "floating": "auto_off",
+          "name": "Alacritty",
+          "percent": 0.25,
+          "swallows": [
+            {
+              "class": "^Alacritty$"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    }
+  ]
+}

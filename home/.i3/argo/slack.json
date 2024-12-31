@@ -1,0 +1,24 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+//    "geometry": {
+//       "height": 2108,
+//       "width": 3788,
+//       "x": 0,
+//       "y": 0
+//    },
+    "name": "Slack - strange-loop",
+    "percent": 100,
+    "swallows": [
+       {
+          "class": "^Slack$"
+       // "instance": "^slack$",
+       // "title": "^Slack\\ \\-\\ strange\\-loop$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+

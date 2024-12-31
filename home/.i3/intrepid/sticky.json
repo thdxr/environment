@@ -1,0 +1,52 @@
+// vim:ts=4:sw=4:et
+{
+  // splitv split container with 2 children
+  "border": "pixel",
+  "floating": "auto_off",
+  "layout": "splitv",
+  "marks": [],
+  "percent": 1,
+  "type": "con",
+  "nodes": [
+    {
+      "border": "pixel",
+      "current_border_width": 0,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 922,
+        "width": 2065,
+        "x": 20,
+        "y": 20
+      },
+      "marks": [],
+      "name": "slack",
+      "percent": 0.5,
+      "swallows": [
+        {
+          "class": "^Slack$"
+        }
+      ],
+      "type": "con"
+    },
+    {
+      "border": "pixel",
+      "current_border_width": 0,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 1080,
+        "width": 1280,
+        "x": 0,
+        "y": 1080
+      },
+      "marks": [],
+      "name": "discord",
+      "percent": 0.5,
+      "swallows": [
+        {
+          "class": "^discord$"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}

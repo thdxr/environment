@@ -1,0 +1,108 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            // splitv split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "marks": [],
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 922,
+                       "width": 2065,
+                       "x": 20,
+                       "y": 20
+                    },
+                    "marks": [],
+                    "name": "Slack | Google Calendar | ironbay",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                          "class": "^Slack$"
+                       // "instance": "^slack$",
+                       // "machine": "^challenger$",
+                       // "title": "^Slack\\ \\|\\ Google\\ Calendar\\ \\|\\ ironbay$",
+                       // "window_role": "^browser\\-window$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1080,
+               "width": 1280,
+               "x": 0,
+               "y": 1080
+            },
+            "marks": [],
+            "name": "Discord",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^discord$",
+                  "instance": "^discord$"
+               // "machine": "^challenger$",
+               // "title": "^Discord$",
+               // "window_role": "^browser\\-window$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.7,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2160,
+               "width": 1920,
+               "x": 10,
+               "y": 10
+            },
+            "marks": [],
+            "name": "New Tab - Google Chrome",
+            "percent": 1,
+            "swallows": [
+               {
+                  "class": "^Google\\-chrome$"
+               // "instance": "^google\\-chrome$",
+               // "machine": "^challenger$",
+               // "title": "^New\\ Tab\\ \\-\\ Google\\ Chrome$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

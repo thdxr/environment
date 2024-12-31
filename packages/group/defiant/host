@@ -1,0 +1,7 @@
+efibootmgr
+intel-media-driver
+intel-ucode
+libva-intel-driver
+libva-utils
+usbutils
+zram-generator

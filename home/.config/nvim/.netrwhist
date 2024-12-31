@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/dax/dev/projects/ironbay/nori/web/src/data'
+let g:netrw_dirhist_7='/home/dax/dev/projects/scratch/cdk/handlers'
+let g:netrw_dirhist_6='/home/dax/dev/projects/kinetic/kinetic/backend/transport'
+let g:netrw_dirhist_5='/home/dax/dev/projects/blvd/Dashboard/scripts'
+let g:netrw_dirhist_4='/home/dax/dev/projects/ironbay/nori/web'
+let g:netrw_dirhist_3='/home/dax/dev/projects/ironbay/nori'
+let g:netrw_dirhist_2='/home/dax/dev/projects/ironbay/nori/.elixir_ls'
+let g:netrw_dirhist_1='/home/dax/dev/projects/ironbay/nori'

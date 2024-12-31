@@ -1,0 +1,13 @@
+urxvt*foreground: white
+urxvt*background: black
+
+URxvt.scrollBar: false
+URxvt.font:xft:Hasklig:antialias=true:size=12
+
+URxvt.perl-ext-common: selection-to-clipboard,clipboard
+URxvt.iso14755: False
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.saveLines: 100000
+
+Xcursor.size: 8

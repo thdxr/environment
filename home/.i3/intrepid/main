@@ -1,0 +1,27 @@
+#/bin/bash
+i3-msg "workspace 1; append_layout ~/.i3/intrepid/sticky.json;"
+i3-msg "workspace 1; exec slack -f;"
+i3-msg "workspace 1; exec discord"
+sleep 3
+
+i3-msg "workspace 2; append_layout ~/.i3/intrepid/main.json;"
+i3-msg "workspace 2; exec google-chrome-stable;"
+i3-msg "workspace 2; move workspace to output fake-1"
+
+i3-msg "workspace 8, move workspace to output fake-1"
+
+i3-msg "workspace 10, move workspace to output fake-0"
+i3-msg "workspace 10; exec alacritty -e zsh -c \"journal && exec zsh\""
+i3-msg "workspace 10; exec barrier"
+i3-msg "workspace 10; exec pavucontrol"
+i3-msg "workspace 10; exec aw-qt"
+i3-msg "workspace 10; exec mechvibes --no-sandbox"
+sleep 3
+
+# i3-msg "workspace 3; append_layout ~/.i3/intrepid/browser.json;"
+# i3-msg "workspace 3; exec firefox-developer-edition;"
+# i3-msg "workspace 3; exec alacritty -e /usr/sbin/zsh;"
+# i3-msg "workspace 3; exec alacritty -e /usr/sbin/zsh;"
+# i3-msg "workspace 3; exec alacritty -e /usr/sbin/zsh;"
+# i3-msg "[workspace=3] move workspace to output right"
+

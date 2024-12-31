@@ -1,0 +1,10 @@
+#/bin/bash
+
+i3-msg "workspace 1; exec firefox-developer-edition;"
+i3-msg "workspace 2; append_layout ~/.i3/argo/slack.json" 
+i3-msg "workspace 2; exec slack -f;"
+i3-msg "workspace 3; exec alacritty;"
+i3-msg "workspace 3; exec alacritty;"
+i3-msg "workspace 3; exec alacritty;"
+i3-msg "workspace 3; exec barrier;"
+

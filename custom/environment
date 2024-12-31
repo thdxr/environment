@@ -1,0 +1,39 @@
+SSH_ENV="$HOME/.ssh/agent-environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+
+export PATH=$PATH:~/.npm/bin
+export PATH=$PATH:~/.yarn/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/dev/bin
+export ERL_AFLAGS="-kernel shell_history enabled"
+export EDITOR=nvim
+export BROWSER=google-chrome-stable
+export GOPATH=$HOME/dev/gopath
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DOWNLOADS=$HOME/downloads
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CURRENT_DESKTOP=i3
+
