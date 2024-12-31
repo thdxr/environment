@@ -95,3 +95,4 @@ lsof
 mariadb-clients
 exfat-utils
 iw
+stow

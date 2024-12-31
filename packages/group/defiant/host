@@ -5,3 +5,5 @@ libva-intel-driver
 libva-utils
 usbutils
 zram-generator
+ffmpeg
+lksctp-tools
