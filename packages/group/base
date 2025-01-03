@@ -96,3 +96,5 @@ mariadb-clients
 exfat-utils
 iw
 stow
+nfs-utils
+rustup

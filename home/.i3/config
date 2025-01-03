@@ -26,7 +26,7 @@ font xft:Consolas
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -191,11 +191,11 @@ default_border pixel 0
 default_floating_border pixel 0
 for_window [class="^.*"] border pixel 0
 
-fake-outputs 3840x2160+1280+0 1280x2160+0+0 
+# fake-outputs 3840x2160+1280+0 1280x2160+0+0 
 
-workspace 1 output fake-1
-workspace 2 output fake-1
-workspace 3 output fake-0
+workspace 1 output LEFT
+workspace 2 output LEFT
+workspace 3 output RIGHT
 
 # Startup
 # exec --no-startup-id picom

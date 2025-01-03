@@ -1,7 +1,15 @@
+#!/bin/bash
+
 alias clear='printf "\033c"'
 alias vim=nvim
 alias ls="ls --color -G"
 
 cd() {
   builtin cd "${@:-$HOME}" && ls
+}
+
+osc52() {
+  local input
+  input=$(cat | base64 | tr -d '\n')
+  printf "\e]52;c;%s\a" "$input"
 }
