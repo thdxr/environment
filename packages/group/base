@@ -98,3 +98,5 @@ iw
 stow
 nfs-utils
 rustup
+docker-buildx
+glimpse

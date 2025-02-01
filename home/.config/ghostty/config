@@ -13,3 +13,4 @@ gtk-adwaita = false
 gtk-titlebar = false
 confirm-close-surface = false
 copy-on-select = clipboard
+mouse-shift-capture = false
