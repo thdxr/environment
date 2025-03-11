@@ -21,6 +21,16 @@ vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 vim.opt.undofile = true
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
-vim.o.autoread = true
+vim.opt.autoread = true
 vim.opt.exrc = true
 vim.opt.secure = true
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  command = "checktime"
+})
+
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI", "FocusGained" }, {
+  pattern = "*",
+  command = "checktime"
+})

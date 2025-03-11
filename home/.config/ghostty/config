@@ -11,6 +11,7 @@ window-padding-x = 10
 window-padding-y = 10
 gtk-adwaita = false
 gtk-titlebar = false
+window-decoration = none
 confirm-close-surface = false
 copy-on-select = clipboard
 mouse-shift-capture = false

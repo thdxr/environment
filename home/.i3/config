@@ -26,7 +26,8 @@ font xft:Consolas
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec ghostty
+# bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
