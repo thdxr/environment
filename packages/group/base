@@ -100,3 +100,9 @@ nfs-utils
 rustup
 docker-buildx
 glimpse
+claude-code
+cloudflared-bin
+erlang
+erlang-asn1
+nodejs-lts-jod
+sentry-cli
