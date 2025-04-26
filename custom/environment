@@ -29,6 +29,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export EDITOR=nvim
 export BROWSER=google-chrome-stable
 export GOPATH=$HOME/dev/gopath
+export PATH=$PATH:$GOPATH/bin
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
