@@ -200,8 +200,6 @@ workspace 3 output RIGHT
 
 # Startup
 # exec --no-startup-id picom
-exec --no-startup-id dunst
-exec --no-startup-id barrier
 exec --no-startup-id ~/.i3/startup
 # exec --no-startup-id feh --randomize --bg-fill /home/dax/docs/wallpaper
 
