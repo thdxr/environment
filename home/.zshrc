@@ -4,13 +4,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export ZSH=~/.oh-my-zsh/
 fi
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="hyperzsh"
 ZSH_THEME="alanpeabody"
-# ZSH_THEME="mh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -107,10 +101,6 @@ fi
 # bun completions
 [ -s "/home/thdxr/.bun/_bun" ] && source "/home/thdxr/.bun/_bun"
 
-# pnpm
-export PNPM_HOME="/home/thdxr/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -130,3 +120,17 @@ export PATH=$PATH:/home/thdxr/.pulumi/bin
 
 # sst
 export PATH=/home/thdxr/.sst/bin:$PATH
+
+# opencode
+export PATH=/home/thdxr/.opencode/bin:$PATH
+
+# opencode
+export PATH=/Users/thdxr/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/thdxr/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
