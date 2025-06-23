@@ -110,3 +110,5 @@ opencode-bin
 pulumictl
 repomix
 wscat
+fd
+tree
