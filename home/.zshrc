@@ -78,6 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 #
+alias mytest="echo 'test'"
 for f in ~/dev/environment/custom/*; do source $f; done
 
 autoload -U promptinit
@@ -134,3 +135,12 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/thdxr/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# termcast
+export TERMCAST_INSTALL="$HOME/.termcast"
+export PATH="$TERMCAST_INSTALL/bin:$PATH"

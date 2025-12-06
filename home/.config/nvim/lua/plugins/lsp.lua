@@ -37,43 +37,52 @@ return {
         end,
       })
 
-      require("mason").setup()
+       require("mason").setup()
+       require("mason-lspconfig").setup({
+       })
       require("mason-lspconfig").setup({
-        ensure_installed = {
-          "astro",
-          "cssls",
-          "vtsls",
-          "cssmodules_ls",
-          "gopls",
-          "lua_ls",
-        },
-      })
-      require("mason-lspconfig").setup_handlers({
-        function(server_name) -- default handler (optional)
-          require("lspconfig")[server_name].setup({})
-        end,
-        ["vtsls"] = function()
-          require("lspconfig").vtsls.setup({
-            root_dir = require("lspconfig").util.root_pattern(
-              ".git",
-              "pnpm-workspace.yaml",
-              "pnpm-lock.yaml",
-              "yarn.lock",
-              "package-lock.json",
-              "bun.lockb"
-            ),
-            typescript = {
-              tsserver = {
-                maxTsServerMemory = 12288,
+        handlers = {
+          function(server_name) -- default handler (optional)
+            require("lspconfig")[server_name].setup({})
+          end,
+          ["vtsls"] = function()
+            require("lspconfig").vtsls.setup({
+              settings = {
+                complete_function_calls = true,
+                vtsls = {
+                  autoUseWorkspaceTsdk = true,
+                },
+                typescript = {
+                  updateImportsOnFileMove = { enabled = "always" },
+                  suggest = {
+                    completeFunctionCalls = true,
+                  },
+                  preferences = {
+                    importModuleSpecifier = 'shortest',
+                    importModuleSpecifierEnding = 'minimal',
+                    includePackageJsonAutoImports = 'on',
+                  },
+                  inlayHints = {
+                    parameterNames = { enabled = "literals" },
+                    parameterTypes = { enabled = true },
+                    variableTypes = { enabled = false },
+                    propertyDeclarationTypes = { enabled = true },
+                    functionLikeReturnTypes = { enabled = true },
+                    enumMemberValues = { enabled = true },
+                  },
+                },
+                javascript = {
+                  updateImportsOnFileMove = { enabled = "always" },
+                  preferences = {
+                    importModuleSpecifier = 'shortest',
+                    importModuleSpecifierEnding = 'minimal',
+                    includePackageJsonAutoImports = 'on',
+                  },
+                },
               },
-            },
-            experimental = {
-              completion = {
-                entriesLimit = 3,
-              },
-            },
-          })
-        end,
+            })
+          end,
+        }
       })
     end,
   },
