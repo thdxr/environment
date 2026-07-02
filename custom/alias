@@ -5,7 +5,9 @@ alias vim=nvim
 alias ls="ls --color -G"
 
 cd() {
-  builtin cd "${@:-$HOME}" && ls
+  builtin cd "${@:-$HOME}"
+  # if this is an interactive shell run ls
+  [[ $- == *i* ]] && ls
 }
 
 osc52() {

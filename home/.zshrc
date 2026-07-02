@@ -144,3 +144,10 @@ export PATH="$PATH:/Users/thdxr/.lmstudio/bin"
 # termcast
 export TERMCAST_INSTALL="$HOME/.termcast"
 export PATH="$TERMCAST_INSTALL/bin:$PATH"
+
+# nlsh - PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# nlsh - auto-start (remove this line to disable)
+[ -t 0 ] && [ -x "$HOME/.local/bin/nlsh" ] && nlsh # auto-start
+

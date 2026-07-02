@@ -1,33 +1,12 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "keybinds": {
-    "leader": "ctrl+x",
-    "messages_half_page_up": "ctrl+u",
-    "messages_half_page_down": "ctrl+d"
-  },
-  "model": "anthropic/claude-sonnet-4-20250514",
   "provider": {
-    "lmstudio": {
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "http://localhost:1234/v1"
-      },
+    "opencode": {
       "models": {
-        "qwen/qwen3-coder-30b": {}
+        "claude-opus-4-5": {
+          "variants": {}
+        }
       }
-    },
-    "openrouter": {
-      "npm": "@openrouter/ai-sdk-provider",
-      "models": {
-        "anthropic/claude-sonnet-4": {}
-      }
-    },
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "http://localhost:11434/v1"
-      },
-      "models": {}
     }
   }
 }

@@ -4,21 +4,28 @@ return {
 		branch = "main",  -- Use main branch for Neovim 0.12+ compatibility
 		build = ":TSUpdate",
 		config = function()
+			local parsers = {
+				"javascript",
+				"lua",
+				"typescript",
+				"tsx",
+				"go",
+			}
+
 			-- Use git to avoid tarball extraction issues
 			require("nvim-treesitter.install").prefer_git = true
-			
-			-- nvim-treesitter 1.0+ uses a new API
+
 			require("nvim-treesitter").setup({
-				ensure_installed = {
-					"lua",
-					"typescript",
-					"tsx",
-					"go",
-				},
-				auto_install = false,
-				highlight = {
-					enable = true,
-				},
+			})
+
+			require("nvim-treesitter").install(parsers)
+
+			vim.api.nvim_create_autocmd("FileType", {
+				group = vim.api.nvim_create_augroup("user-treesitter", { clear = true }),
+				pattern = { "javascript", "javascriptreact", "lua", "typescript", "typescriptreact", "go" },
+				callback = function()
+					vim.treesitter.start()
+				end,
 			})
 		end,
 	},

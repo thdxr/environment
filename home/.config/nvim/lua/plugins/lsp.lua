@@ -7,19 +7,16 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      local lspconfig = require("lspconfig")
-      local lspconfig_defaults = lspconfig.util.default_config
-      
-      lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-        "force",
-        lspconfig_defaults.capabilities,
-        require("cmp_nvim_lsp").default_capabilities()
-      )
-      
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
       -- Disable semantic tokens globally to prevent LSP highlighting from overriding treesitter
-      lspconfig_defaults.capabilities.textDocument.semanticTokens = nil
-      lspconfig_defaults.capabilities.textDocument.semanticTokensProvider = nil
-      
+      capabilities.textDocument.semanticTokens = nil
+      capabilities.textDocument.semanticTokensProvider = nil
+
+      vim.lsp.config("*", {
+        capabilities = capabilities,
+      })
+
       vim.api.nvim_create_autocmd("LspAttach", {
         desc = "LSP actions",
         callback = function(event)
@@ -51,53 +48,49 @@ return {
       })
 
       require("mason").setup()
-      require("mason-lspconfig").setup()
-      
-      -- Get all installed mason packages and set them up
-      local mason_lspconfig = require("mason-lspconfig")
-      local installed_servers = mason_lspconfig.get_installed_servers()
-      
-      for _, server_name in ipairs(installed_servers) do
-        if server_name == "vtsls" then
-          lspconfig.vtsls.setup({
-            settings = {
-              complete_function_calls = true,
-              vtsls = {
-                autoUseWorkspaceTsdk = true,
-              },
-              typescript = {
-                updateImportsOnFileMove = { enabled = "always" },
-                suggest = {
-                  completeFunctionCalls = true,
-                },
-                preferences = {
-                  importModuleSpecifier = 'shortest',
-                  importModuleSpecifierEnding = 'minimal',
-                  includePackageJsonAutoImports = 'on',
-                },
-                inlayHints = {
-                  parameterNames = { enabled = "literals" },
-                  parameterTypes = { enabled = true },
-                  variableTypes = { enabled = false },
-                  propertyDeclarationTypes = { enabled = true },
-                  functionLikeReturnTypes = { enabled = true },
-                  enumMemberValues = { enabled = true },
-                },
-              },
-              javascript = {
-                updateImportsOnFileMove = { enabled = "always" },
-                preferences = {
-                  importModuleSpecifier = 'shortest',
-                  importModuleSpecifierEnding = 'minimal',
-                  includePackageJsonAutoImports = 'on',
-                },
-              },
+
+      vim.lsp.config("vtsls", {
+        settings = {
+          complete_function_calls = true,
+          vtsls = {
+            autoUseWorkspaceTsdk = true,
+          },
+          typescript = {
+            updateImportsOnFileMove = { enabled = "always" },
+            suggest = {
+              completeFunctionCalls = true,
             },
-          })
-        else
-          lspconfig[server_name].setup({})
-        end
-      end
+            preferences = {
+              importModuleSpecifier = "shortest",
+              importModuleSpecifierEnding = "minimal",
+              includePackageJsonAutoImports = "on",
+            },
+            inlayHints = {
+              parameterNames = { enabled = "literals" },
+              parameterTypes = { enabled = true },
+              variableTypes = { enabled = false },
+              propertyDeclarationTypes = { enabled = true },
+              functionLikeReturnTypes = { enabled = true },
+              enumMemberValues = { enabled = true },
+            },
+          },
+          javascript = {
+            updateImportsOnFileMove = { enabled = "always" },
+            preferences = {
+              importModuleSpecifier = "shortest",
+              importModuleSpecifierEnding = "minimal",
+              includePackageJsonAutoImports = "on",
+            },
+          },
+        },
+      })
+
+      require("mason-lspconfig").setup({
+        ensure_installed = { "vtsls" },
+        automatic_enable = {
+          exclude = { "tsgo" },
+        },
+      })
     end,
   },
   {

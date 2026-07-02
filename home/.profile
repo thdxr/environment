@@ -6,3 +6,5 @@ source ~/dev/environment/custom/environment
 export PATH="$PATH:/Users/thdxr/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+. "$HOME/.local/share/../bin/env"

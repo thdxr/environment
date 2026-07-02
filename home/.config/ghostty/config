@@ -9,7 +9,6 @@ window-height = 100000
 theme= tokyonight
 window-padding-x = 10
 window-padding-y = 10
-gtk-adwaita = false
 gtk-titlebar = false
 window-decoration = none
 confirm-close-surface = false
